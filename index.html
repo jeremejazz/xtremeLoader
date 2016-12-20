@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>nativeDroid - Theme for jQuery Mobile - index</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+
+		<!-- TODO : script inject -->
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="src/css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="src/css/jquery.mobile-1.4.5.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="src/css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+        <link rel="stylesheet" href="src/css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="src/css/jquerymobile.nativedroid.color.green.css" id='jQMnDColor' />
+		
+		<style type='text/css'>
+  			#productList{
+ 			height:200px; 
+            overflow: auto;   
+            -webkit-overflow-scrolling:touch;
+ 			}
+
+ 			.ui-header.ui-fixed-hidden{ /*override overpadding header. */
+ 				padding:0px;
+ 			}
+
+ 			#list_products{
+ 				  max-height: 200px; overflow:auto; 
+ 			}
+		</style>
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="src/js/jquery.js"></script>
+        <script src="src/js/jquery.mobile-1.4.5.js"></script>
+        <script src="src/js/nativedroid.script.js"></script>
+        <script>
+        	$(document).ready(function(){
+        		//preload panels
+        		$( "body>[data-role='panel']" ).panel();
+
+        		$("#category").change(function(){
+        			       			//fetch products
+
+        			$.ajax({
+        				url: '/ajax/ota.txt',
+        				method: 'GET',
+        				success: function(response){
+        					var parsed = $.parseHTML(response); 
+        						$("#list_products").html('');
+        					$.each(parsed[1], function(i, item){
+        						if(i ==0)
+        							return; //don't include [select product]
+        						$("#list_products").append('<li><a href="" data-val="' + $(item).val() + '">' + $(item).text() + '</a></li>');
+        					});
+
+        					$("#list_products").listview("refresh");
+        				}
+
+        			});
+        			//todo put on ajax callback
+        			$("#product_collapse").removeClass('ui-state-disabled');	
+        		});
+
+        		$("#list_products ").on('click',"li a",function(e){
+        			e.preventDefault();
+ 			 
+
+        			$("#product").val(""); //todo
+        			$("#product_name a").text($(this).text());
+        			$( "#product_collapse" ).collapsible( "collapse" );
+
+
+        		});
+        		
+        	});
+        </script>
+
+
+    </head>
+    <body>
+
+
+
+    <div data-role="page" data-theme='b'  id="home" >
+ 
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <h1>XtremeLoader - Quick Access</h1>
+            <a href="#" data-ajax='false' ><i class='fa fa-android'></i></a>
+        </div>
+        
+        <div data-role="content">  
+ 
+	        <div class="inset">
+	        	<form action="" data-inset="true" method="post">
+	        	<div class="ui-grid-a ui-responsive">
+		     		<div class="ui-block-a">
+		     			<a href="#page_load" class="ui-btn ui-shadow ui-corner-all " data-transition="slide">
+		         		<i class="lIcon fa fa-mobile"></i>LOAD
+		         		</a>
+		         	</div>
+		         	
+
+		     		<div class="ui-block-b">
+			         	<a href="" class="ui-btn ui-shadow ui-corner-all ui-state-disabled">
+			         		<i class="lIcon fa fa-refresh"></i>
+			         	TRANSFER</a>
+					</div>
+
+					<div class="ui-block-a">
+						<a href="" class="ui-btn ui-shadow ui-corner-all ui-state-disabled">
+	         				<i class="lIcon fa fa-money"></i>  PISO LOAD</a>
+					</div>
+					<div class="ui-block-b">
+			         	<a href="" class="ui-btn ui-shadow ui-corner-all ui-state-disabled">
+			         		<i class="lIcon fa fa-shield"></i>
+			         	INSURANCE</a>
+					</div>
+					<div class="ui-block-a">
+			        <a href="" class="ui-btn ui-shadow ui-corner-all ui-state-disabled">
+	         		<i class="lIcon fa fa-credit-card"></i>
+	         	LOAD E-Plus</a>
+					</div>					
+					<div class="ui-block-b">
+			        <a href="" class="ui-btn ui-shadow ui-corner-all ui-state-disabled">
+	         		<i class="lIcon fa fa-ticket"></i>
+	         	E-VOUCHER</a>
+					</div>
+				</div>
+<!--
+ 
+
+
+		        </form>
+
+	         	 -->
+		        </form>
+	        </div>
+        	
+        </div>
+
+    </div> <!-- page-->
+	
+	
+	<div data-role="page" data-theme='b' id="page_load" >
+		<!-- Navigation Drawer -->
+	<div data-role="panel" id="navigation_panel" data-theme="b" data-position="left" data-display="overlay" >
+	<div class="ui-panel-inner">
+ 		<ul data-role="listview" id="" data-filter="true" data-filter-placeholder="Search Product" data-inset="true"  data-icon="false">
+ 
+						    <li><a href="#home" >Home</a></li>
+						    <li><a href="#">Settings</a></li>
+						    <li><a href="#">About</a></li>
+						    <li><a href="#">Report a Bug</a></li>
+					 
+	 	</ul>
+		 
+	</div>
+		
+	</div><!-- /panel -->
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <h1>Xtreme Loader - Load</h1>
+            <a href="#navigation_panel" data-ajax='false' ><i class='fa fa-bars'></i></a>
+        </div>
+        
+        <div data-role="content">  
+
+
+ 				<form action="">
+ 					 			<div class="inset">
+			 		<div data-role="fieldcontain">
+						<label for="txtID">ID:</label>
+						<input type="text" name="text-basic" id="txtID" value=""  data-clear-btn="true" placeholder="Account ID No.">
+			 		</div>	
+			 		<div data-role="fieldcontain">
+						<label for="txtpik">PIK:</label>
+						<input type="password" name="text-basic" id="txtpik" value=""   data-clear-btn="true"  placeholder="PIK Code">
+		 			</div>
+					<div data-role="fieldcontain">
+						<label for="category">Category</label>
+						<select name="category" id="category" data-native-menu="true" >
+							<option value="" selected> Category </option>
+							<option value="Cellphone EPINs"> Cellphone EPINs </option>
+							<option value="Internet / Broadband"> Internet / Broadband </option>
+							<option value="Landline"> Landline </option>
+							<option value="Online Entertainment"> Online Entertainment </option>
+							<option value="Online Games"> Online Games </option>
+							<option value="Over-The-Air (OTA)"> Over-The-Air (OTA) </option>
+							<option value="Satellite / Cable TV"> Satellite / Cable TV </option>
+							<option value="Utilities"> Utilities </option>
+							<option value="myLIFE"> myLIFE </option>
+						</select>
+
+					</div>
+
+					<div data-role="fieldcontain" >
+						<label for=""></label>
+						<div data-role="collapsible" data-theme="b" data-content-theme="b" class="ui-state-disabled" id="product_collapse"> 
+						<h2 id="product_name">Product</h2>
+						<input type="hidden" id="product" name="product">
+					 
+						<ul data-role="listview" id="list_products" data-filter="true" data-filter-placeholder="Search Product" data-inset="true">
+ 
+						    <li><a href="#">Banana</a></li>
+						    <li><a href="#">Cherry</a></li>
+						    <li><a href="#">Cranberry</a></li>
+					 
+						</ul>
+						 
+						</div> <!-- collapsible -->
+					</div>
+					<div data-role="fieldcontain">
+						<label for="">Cellnumber: </label>
+						<input type="text" name="cellnumber" data-clear-btn="true" >
+					</div>					
+					<div data-role="fieldcontain">
+						<label for="">Email: </label>
+						<input type="email" name="email" data-clear-btn="true" >
+					</div>
+
+					<div data-role="fieldcontain">
+
+						<input type="checkbox" id="chksave" checked>
+							<label for="chksave">Save my basic information</label>
+							<p style="text-align:right;">What's this? <a href="#popupInfo" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn  ui-nodisc-icon ui-btn-inline ui-icon-info ui-btn-icon-notext" title="Learn more">Learn more</a></p>
+							<div data-role="popup" id="popupInfo" class="ui-content" data-theme="a" style="max-width:350px;">
+							  <p>By checking this, your <strong>Account ID, Cellnumber, </strong> and <strong>Email</strong> will be saved for next use. </p>
+							</div>	
+					</div>
+
+					<div data-role="fieldcontain">
+						<button  type="button">Submit</button>
+						<button  type="button">Clear</button>
+						<button  type="button">Cancel</button>
+					</div>
+
+		 			</div><!-- .inset -->
+ 				</form>
+
+ 			</div>
+ 			
+        	
+        </div>
+
+    </div> <!-- page-->
+
+
+
+    </body>
+</html>

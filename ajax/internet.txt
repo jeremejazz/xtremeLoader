@@ -1,0 +1,11 @@
+
+<select name="pcode" id="pcode">
+	<option value=""selected> [Select Product] </option>
+	<option value="BL100"> BL100 - Blast 100 </option>
+	<option value="BL20"> BL20 - Blast 20 </option>
+	<option value="BL50"> BL50 - Blast 50 </option>
+	<option value="GOWIFI50"> GOWIFI50 - GO WIFI VOUCHER 50 </option>
+	<option value="SBRO100"> SBRO100 - Smart Bro Load 100 </option>
+	<option value="SBRO300"> SBRO300 - Smart Bro Load 300 </option>
+	<option value="SUBRO50"> SUBRO50 - SUN Broadband Wireless 50 </option>
+</select>

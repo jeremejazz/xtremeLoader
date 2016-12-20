@@ -1,0 +1,17 @@
+{
+  "name": "xtremeloader",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "jeremejazz <jeremejazz15@yahoo.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
