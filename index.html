@@ -6,15 +6,13 @@
 		
 
 		<!-- TODO : script inject -->
-		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+ 		<!-- build:style bundle -->
         <link rel="stylesheet" href="src/css/font-awesome.min.css" />
-
-		<!-- jQueryMobileCSS - original without styling -->
+ 
 		<link rel="stylesheet" href="src/css/jquery.mobile-1.4.5.css" />
-
-		<!-- nativeDroid core CSS -->
+ 
         <link rel="stylesheet" href="src/css/jquerymobile.nativedroid.css" />
-
+		 <!-- /build -->
 		<!-- nativeDroid: Light/Dark -->
         <link rel="stylesheet" href="src/css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
 
@@ -37,9 +35,11 @@
  			}
 		</style>
 		<!-- jQuery / jQueryMobile Scripts -->
+		<!-- build:script bundle -->
 		<script src="src/js/jquery.js"></script>
         <script src="src/js/jquery.mobile-1.4.5.js"></script>
         <script src="src/js/nativedroid.script.js"></script>
+        <!-- /build -->
         <script>
         	$(document).ready(function(){
         		//preload panels
@@ -89,7 +89,8 @@
 
 
     <div data-role="page" data-theme='b'  id="home" >
- 
+     <!-- build:section layout.navbar -->
+    <!-- /build -->
         <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
             <h1>XtremeLoader - Quick Access</h1>
             <a href="#" data-ajax='false' ><i class='fa fa-android'></i></a>

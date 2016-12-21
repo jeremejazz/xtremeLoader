@@ -8,6 +8,11 @@ UI for other pages
  - Load E-plus
    Evoucher
 
+
+Cache the products 
+ -array? or cookie?
+
+
 Settings page 
   	Themes
 	Privacy
