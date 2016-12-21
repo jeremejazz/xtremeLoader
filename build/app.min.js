@@ -1,1 +1,0 @@
-function sample(){alert("not again")}function hello(){console.log("test")}alert("sample file");

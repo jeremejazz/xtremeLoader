@@ -8,8 +8,21 @@ module.exports = function(grunt) {
     extension = ".min.";
   }
 
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-http-server');
 	  grunt.initConfig({
-	    pkg: grunt.file.readJSON('package.json')
+	    pkg: grunt.file.readJSON('package.json'),
+      watch: {
+        files: ['<%= htmlbuild.dist.src %>', 'sections/**/*.html'],
+        tasks: ['concat', 'htmlbuild']
+      },
+      'http-server': {
+        dev:{
+        root : 'build/',
+        port: '1337',
+        openBrowser: true
+        }
+      }
 	  });
 
 
@@ -46,7 +59,7 @@ module.exports = function(grunt) {
  		dest: 'build/<%= pkg.name %>.js'
  	},
  	css: {
-    src: ['src/css/font-awesome.min.css' , 'src/css/jquery.mobile-1.4.5.css', 'src/css/jquerymobile.nativedroid.css' ],
+    src: [  'src/css/jquery.mobile-1.4.5.css', 'src/css/jquerymobile.nativedroid.css' ],
     dest: 'build/<%= pkg.name %>.css'
  	}
 
@@ -85,9 +98,10 @@ grunt.config('htmlbuild', {
           src: [
             'src/css/fonts/**',
             'src/css/images/**',
-            'src/css/jquerymobile.nativedroid.*.css'
+            'src/css/jquerymobile.nativedroid.*.css',
+            'src/css/font-awesome.min.css'
             ],
-          dest: 'build/'
+          dest: 'build/', 
         }
       ]
     }
@@ -99,14 +113,15 @@ grunt.config('htmlbuild', {
 
 var defaultTasks = ['copy'];
   if (target == "minify"){
-      defaultTasks.concat([ 'uglify', 'cssmin', 'htmlbuild']);
+    defaultTasks =  defaultTasks.concat([ 'uglify', 'cssmin', 'htmlbuild']);
   }else{
-      defaultTasks.concat( [ 'concat', 'htmlbuild'] );
+    defaultTasks = defaultTasks.concat( [ 'concat', 'htmlbuild'] );
   }
   
+  defaultTasks = defaultTasks.concat(['watch']);
 
- 
+  
   grunt.registerTask('default', defaultTasks);
-  grunt.registerTask('compile', ['concat']);
+  grunt.registerTask('serve', ['http-server']);
  	
 };
