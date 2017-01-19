@@ -26510,13 +26510,24 @@ $(document).ready(function(){
     var category = $(this).val();
     $.ajax({
       url: URL.ajax,
-      method: 'POST',
+      method: 'GET',
       data: {
         state     : "productlist",
         substate  : "categorized",
         category  : category
       },
+      beforeSend: function(){
+
+        $.mobile.loading( "show", {
+        text: "Loading products",
+        textVisible: true,
+        theme: "b"
+      });
+      }
+      ,
       success: function(response){
+
+
         var parsed = $.parseHTML(response);
           $("#list_products").html('');
         $.each(parsed[1], function(i, item){
@@ -26526,6 +26537,12 @@ $(document).ready(function(){
         });
 
         $("#list_products").listview("refresh");
+      },
+      complete: function(){
+        $.mobile.loading('hide');
+      },
+      error : function(){
+        alert("An error has occured");
       }
 
     });
@@ -26537,7 +26554,7 @@ $(document).ready(function(){
     e.preventDefault();
 
 
-    $("#product").val(""); //todo
+    $("#product").val( $(this).attr('data-val') );
     $("#product_name a").text($(this).text());
     $( "#product_collapse" ).collapsible( "collapse" );
 
@@ -26559,11 +26576,36 @@ $(document).ready(function(){
 
 
   //load page events
-  $("#btnLoadSubmit").click(function(){
+  $("#btnLoadSubmit").click(function(e){
+    e.preventDefault();
+
+        //TODO validation for blank entries, email format (better in realtime for formats), cellnumber formats (no spaces between)
+
+    if(confirm("Are you sure you want to Load \"" + $("#product_name a").text() + "\" (" + $("#product").val() + ") to " +  $("#load_cellnumber").val()) == false){
+      return false;
+    }
+
     //get form data
     var form_data = {};
+    form_data['state'] = "webload3";
+    form_data['step'] = 1;
+    form_data['webtype'] = null;
+    form_data['pc_detail'] = "a";
+    form_data['uid'] = $("#txtID").val(); //TODO might reconsider classes w/ dynamic traversing for other pages
+    form_data['pik'] = $("#txtpik").val();
+    form_data['category'] = $("#category").val();
+    form_data['pcode'] = $("#product").val();
+    form_data['cellno'] = $("#load_cellnumber").val();
+    form_data['email'] = $("#load_email").val();
+    form_data['pc_detail'] = "b"; // no seriously I'm just following those hidden fields
+    form_data['submit'] = "SEND LOAD";
     OnlineRequest.sendRequest(URL.load, form_data, function (data){
-      alert(data.message);
+      var dot = data.message.indexOf("."); //truncate additional text after 1st sentence
+
+      alert(data.message.substring(0, dot));
+      //at this moment I don't know all the response messages. So this should do
+      //todo add reset()
+
     }); //callback alert
   });
 

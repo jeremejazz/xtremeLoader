@@ -58,7 +58,7 @@ module.exports = function(grunt) {
  		src: [
           'src/js/jquery.js',
           'src/js/jquery.mobile-1.4.5.js' ,
-          'src/js/constants-dev.js',
+          'src/js/constants-dev.js', // TODO add parameter for production and dev environments
           'src/js/OnlineRequest.js',
           'src/js/main.js'
         ],

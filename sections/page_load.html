@@ -14,11 +14,11 @@
               <div class="inset">
         <div data-role="fieldcontain">
           <label for="txtID">ID:</label>
-          <input type="text" name="text-basic" id="txtID" value=""  data-clear-btn="true" placeholder="Account ID No.">
+          <input type="number" name="text-basic" id="txtID" value=""  data-clear-btn="true" placeholder="Account ID No.">
         </div>
         <div data-role="fieldcontain">
           <label for="txtpik">PIK:</label>
-          <input type="password" name="text-basic" id="txtpik" value=""   data-clear-btn="true"  placeholder="PIK Code">
+          <input type="number" name="text-basic" id="txtpik" value=""   data-clear-btn="true"  placeholder="PIK Code" class="pincode">
         </div>
         <div data-role="fieldcontain">
           <label for="category">Category</label>
@@ -45,21 +45,17 @@
 
           <ul data-role="listview" id="list_products" data-filter="true" data-filter-placeholder="Search Product" data-inset="true">
 
-              <li><a href="#">Banana</a></li>
-              <li><a href="#">Cherry</a></li>
-              <li><a href="#">Cranberry</a></li>
-
           </ul>
 
           </div> <!-- collapsible -->
         </div>
         <div data-role="fieldcontain">
           <label for="">Cellnumber: </label>
-          <input type="text" name="cellnumber" data-clear-btn="true" >
+          <input type="number" name="cellnumber" id="load_cellnumber" data-clear-btn="true" >
         </div>
         <div data-role="fieldcontain">
           <label for="">Email: </label>
-          <input type="email" name="email" data-clear-btn="true" >
+          <input type="email" name="email" id="load_email" data-clear-btn="true" >
         </div>
 
         <div data-role="fieldcontain">

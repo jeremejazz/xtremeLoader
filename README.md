@@ -18,6 +18,12 @@ Navigation
 
 
 Todo
+- "Your request has been queued. Click here to track request" // remove click here. Truncate after dot
+- list should clear on selection of new category
+- validation for blank entries, email format (better in realtime for formats),
+- Ajax loader for all ajax events
+  -categories (done)
+- reset function  
 - Navigation panel links
   - Settings page
     - Themes
