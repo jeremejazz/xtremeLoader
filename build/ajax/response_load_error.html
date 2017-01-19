@@ -1,0 +1,112 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!-- InstanceBegin template="/Templates/webmsgr01.dwt" codeOutsideHTMLIsLocked="false" -->
+<HEAD>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>LoadXtreme</title>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+function CheckFields(form) {
+	// rudimentary check for a 4.x brower. should catch IE4+ and NS4.*
+	// netscape BSD does not allow JS to change pw field.
+  if (navigator.userAgent.indexOf('Mozilla')==0 && (navigator.userAgent.indexOf('X11') < 0)) {
+    var uid = form['uid'].value;
+    var pik = form['pik'].value;
+    var pc = form['pc'].value;
+    var cellno = form['cellno'].value;
+
+    if (uid.length == 0){
+      alert("The User ID field is empty.");
+      return false;
+    } else if (pik.length == 0){
+      alert("The PIK field is empty.");
+      return false;
+    } else if (pc.length == 0){
+      alert("The Product field is empty.");
+      return false;
+    } else if (cellno.length == 0){
+      alert("The Cellphone field is empty.");
+      return false;
+    }
+
+    //form.action = 'register.cgi';
+		form.onsubmit=null;
+	}
+	return true;
+}
+-->
+</script>
+<!-- InstanceEndEditable -->
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<LINK href="../css/default.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+  body {
+  	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+    background-color: #ffffff;
+	background-image: url(../images/smlbglogo3.jpg);
+	margin: 0;
+	background-repeat:no-repeat;
+	}
+  </style>
+</HEAD>
+
+<BODY >
+<TABLE width="400" border="0" cellspacing="0" cellpadding="0">
+  <TR>
+    <TD height="200" valign="top"><TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+        <TR>
+          <TD>&nbsp;</TD>
+        </TR>
+        <TR>
+          <TD><TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+              <TR>
+                <TD width="5%">&nbsp;</TD>
+                <TD width="*"><!-- InstanceBeginEditable name="EditRegion1" -->
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <form action="https://loadxtreme.ph/cgi-bin/member.cgi" method="post" enctype="application/x-www-form-urlencoded"  onSubmit="return CheckFields(this)">
+                      <input type="hidden" name="state" value="webload3">
+                      <input type="hidden" name="uid" value="">
+                      <input type="hidden" name="pc" value="G300">
+                      <input type="hidden" name="cellno" value="2232">
+                      <input type="hidden" name="email" value="232">
+                      <input type="hidden" name="webtype" value="">
+                      <tr>
+                        <td colspan="2" class="header5">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="header5"><strong><font color="#FFFFFF"><!--RESULT-S-->User ID not found! Please correct your entry.exiting...
+<!--RESULT-E--></font></strong></td>
+                      </tr>
+                      <tr>
+                        <td align="right" class="header5">&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td align="right" class="header5">&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td width="37%" align="right" class="header5">&nbsp;</td>
+                        <td width="63%">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" align="center" class="header5"><input name="Submit" type="image" value="Ok" src="../images/btn_ok.gif" width="72" height="21"></td>
+                      </tr>
+                    </form>
+                  </table>
+                  <!-- InstanceEndEditable --></TD>
+                <TD width="5%">&nbsp;</TD>
+              </TR>
+            </TABLE></TD>
+        </TR>
+        <TR>
+          <TD>&nbsp;</TD>
+        </TR>
+      </TABLE></TD>
+  </TR>
+</TABLE><br>
+</BODY>
+<!-- InstanceEnd --></HTML>

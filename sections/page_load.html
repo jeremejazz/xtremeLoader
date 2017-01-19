@@ -1,0 +1,89 @@
+<div data-role="page" data-theme='b' id="page_load" class="page" >
+
+  <!-- build:section layout.navbar -->
+  <!-- /build -->
+
+      <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+          <h1>Xtreme Loader - Load</h1>
+          <a class="toggle_panel" data-ajax='false' ><i class='fa fa-bars'></i></a>
+      </div>
+
+      <div data-role="content">
+
+      <form action="">
+              <div class="inset">
+        <div data-role="fieldcontain">
+          <label for="txtID">ID:</label>
+          <input type="text" name="text-basic" id="txtID" value=""  data-clear-btn="true" placeholder="Account ID No.">
+        </div>
+        <div data-role="fieldcontain">
+          <label for="txtpik">PIK:</label>
+          <input type="password" name="text-basic" id="txtpik" value=""   data-clear-btn="true"  placeholder="PIK Code">
+        </div>
+        <div data-role="fieldcontain">
+          <label for="category">Category</label>
+          <select name="category" id="category" data-native-menu="true" >
+            <option value="" selected> Category </option>
+            <option value="Cellphone EPINs"> Cellphone EPINs </option>
+            <option value="Internet / Broadband"> Internet / Broadband </option>
+            <option value="Landline"> Landline </option>
+            <option value="Online Entertainment"> Online Entertainment </option>
+            <option value="Online Games"> Online Games </option>
+            <option value="Over-The-Air (OTA)"> Over-The-Air (OTA) </option>
+            <option value="Satellite / Cable TV"> Satellite / Cable TV </option>
+            <option value="Utilities"> Utilities </option>
+            <option value="myLIFE"> myLIFE </option>
+          </select>
+
+        </div>
+
+        <div data-role="fieldcontain" >
+          <label for=""></label>
+          <div data-role="collapsible" data-theme="b" data-content-theme="b" class="ui-state-disabled" id="product_collapse">
+          <h2 id="product_name">Product</h2>
+          <input type="hidden" id="product" name="product">
+
+          <ul data-role="listview" id="list_products" data-filter="true" data-filter-placeholder="Search Product" data-inset="true">
+
+              <li><a href="#">Banana</a></li>
+              <li><a href="#">Cherry</a></li>
+              <li><a href="#">Cranberry</a></li>
+
+          </ul>
+
+          </div> <!-- collapsible -->
+        </div>
+        <div data-role="fieldcontain">
+          <label for="">Cellnumber: </label>
+          <input type="text" name="cellnumber" data-clear-btn="true" >
+        </div>
+        <div data-role="fieldcontain">
+          <label for="">Email: </label>
+          <input type="email" name="email" data-clear-btn="true" >
+        </div>
+
+        <div data-role="fieldcontain">
+
+          <input type="checkbox" id="chksave" checked>
+            <label for="chksave">Save my basic information</label>
+            <p style="text-align:right;">What's this? <a href="#popupInfo" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn  ui-nodisc-icon ui-btn-inline ui-icon-info ui-btn-icon-notext" title="Learn more">Learn more</a></p>
+            <div data-role="popup" id="popupInfo" class="ui-content" data-theme="a" style="max-width:350px;">
+              <p>By checking this, your <strong>Account ID, Cellnumber, </strong> and <strong>Email</strong> will be saved for next use. </p>
+            </div>
+        </div>
+
+        <div data-role="fieldcontain">
+          <button  type="button" id="btnLoadSubmit">Submit</button>
+          <button  type="button" id="btnLoadClear">Clear</button>
+          <button  type="button" id="btnLoadCancel">Cancel</button>
+        </div>
+
+        </div><!-- .inset -->
+      </form>
+
+    </div>
+
+
+      </div>
+
+  </div> <!-- page-->

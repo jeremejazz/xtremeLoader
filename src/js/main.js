@@ -53,6 +53,12 @@ $(document).ready(function(){
 
 //TODO move  events for specific page to separate js files
 
-  
+  $("#btnLoadSubmit").click(function(){
+    //get form data
+    var form_data = {};
+    OnlineRequest.sendRequest(URL.load, form_data, function (data){
+      alert(data.message);
+    }); //callback alert
+  });
 
 });

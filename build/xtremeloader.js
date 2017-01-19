@@ -26462,8 +26462,13 @@ $.widget( "ui.tabs", {
 
 }));
 
+/**
+ * Database constants used in development phase.
+ *
+ */
+
 var URL = {
-  load: 'https://loadxtreme.ph/cgi-bin/member.cgi'
+  load: 'ajax/response_load_error.html'
 }
 
 //requires jquery
@@ -26471,19 +26476,24 @@ var OnlineRequest = {};
 
 //parse response message returned as html file
 //returns str
-OnlineRequest.getResponseMessage = function(response){
+OnlineRequest.getResponseMessage = function(response, callback){
 
-  Console.log(response);
+  var message = $(response).find("strong").text();
+  var data = {};
+  data.message = message;
+  if(typeof callback == "function") {
+    callback(data);
+  }
 };
 
 //data= {}
-OnlineRequest.sendRequest = function(url, data){
+OnlineRequest.sendRequest = function(url, data, callback){
 
 $.ajax({
   url : url,
   data : data,
   success: function(response){
-    OnlineRequest.getResponseMessage(response);
+    OnlineRequest.getResponseMessage(response, callback);
   }
 });
 
@@ -26544,6 +26554,12 @@ $(document).ready(function(){
 
 //TODO move  events for specific page to separate js files
 
-  
+  $("#btnLoadSubmit").click(function(){
+    //get form data
+    var form_data = {};
+    OnlineRequest.sendRequest(URL.load, form_data, function (data){
+      alert(data.message);
+    }); //callback alert
+  });
 
 });

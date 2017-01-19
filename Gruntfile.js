@@ -13,8 +13,8 @@ module.exports = function(grunt) {
 	  grunt.initConfig({
 	    pkg: grunt.file.readJSON('package.json'),
       watch: {
-        files: ['<%= htmlbuild.dist.src %>', 'sections/**/*.html', 'src/**/*.*'],
-        tasks: ['concat', 'htmlbuild']
+        files: ['Gruntfile.js','<%= htmlbuild.dist.src %>', 'sections/**/*.html', 'src/**/*.*'],
+        tasks: ['concat', 'htmlbuild', 'copy']
       },
       'http-server': {
         dev:{
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
  		src: [
           'src/js/jquery.js',
           'src/js/jquery.mobile-1.4.5.js' ,
-          'src/js/constants.js',
+          'src/js/constants-dev.js',
           'src/js/OnlineRequest.js',
           'src/js/main.js'
         ],
@@ -87,7 +87,10 @@ grunt.config('htmlbuild', {
 			sections: {
 				layout: {
 					navbar: 'sections/navbar.html'
-				}
+				},
+        page:{
+          load: 'sections/page_load.html'
+        }
 			}
 		}
 	}
@@ -105,14 +108,14 @@ grunt.config('htmlbuild', {
             'src/css/fonts/**',
             'src/css/images/**',
             'src/css/jquerymobile.nativedroid.*.css',
-            'src/css/font-awesome.min.css'
+            'src/css/font-awesome.min.css',
+            'ajax/**'
             ],
           dest: 'build/',
         }
       ]
     }
   });
-
 
   // Default task(s).
 
