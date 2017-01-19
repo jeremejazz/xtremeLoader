@@ -39,11 +39,25 @@
 
 
 
-    <div data-role="page" data-theme='b'  id="home" >
+    <div data-role="page" data-theme='b'  id="home" class="page" >
+	<div data-role="panel" id="navigation_panel" class="navigation_panel" data-theme="b" data-position="left" data-display="overlay" >
+	<div class="ui-panel-inner">
+ 		<ul data-role="listview" id="" data-filter="true" data-filter-placeholder="Search Product" data-inset="true"  data-icon="false">
+
+						    <li><a href="#home" >Home</a></li>
+						    <li><a href="#">Settings</a></li>
+						    <li><a href="#">About</a></li>
+						    <li><a href="#">Report a Bug</a></li>
+
+	 	</ul>
+
+	</div>
+
+	</div><!-- /panel -->
 
         <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
-            <h1>XtremeLoader - Quick Access</h1>
-            <a href="#" data-ajax='false' ><i class='fa fa-android'></i></a>
+            <h1>XtremeLoader</h1>
+            <a href="#" class="toggle_panel" data-ajax='false' ><i class='fa fa-android'></i></a>
         </div>
 
         <div data-role="content">
