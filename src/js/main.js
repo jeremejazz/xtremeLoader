@@ -10,7 +10,7 @@ $(document).ready(function(){
       url: URL.ajax,
       method: 'POST',
       data: {
-        state     : "productList",
+        state     : "productlist",
         substate  : "categorized",
         category  : category
       },
