@@ -25,7 +25,7 @@ module.exports = function(grunt) {
       }
 	  });
 
-
+    //TODO single array of files to be minified
   	grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.config('uglify', {
 	   options: {
@@ -55,7 +55,13 @@ module.exports = function(grunt) {
 
  	},
  	js: {
- 		src: ['src/js/jquery.js', 'src/js/jquery.mobile-1.4.5.js' , 'src/js/constants.js','src/js/main.js'],
+ 		src: [
+          'src/js/jquery.js',
+          'src/js/jquery.mobile-1.4.5.js' ,
+          'src/js/constants.js',
+          'src/js/OnlineRequest.js',
+          'src/js/main.js'
+        ],
  		dest: 'build/<%= pkg.name %>.js'
  	},
  	css: {

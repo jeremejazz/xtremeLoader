@@ -1,8 +1,8 @@
 /**
- * Database constants used in development phase. 
+ * Database constants used in development phase.
  *
  */
 
 var URL = {
-  load: ''
+  load: 'ajax/response_load_error.html'
 }

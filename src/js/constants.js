@@ -1,3 +1,3 @@
 var URL = {
-  load: ''
+  load: 'https://loadxtreme.ph/cgi-bin/member.cgi'
 }

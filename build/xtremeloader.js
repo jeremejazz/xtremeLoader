@@ -26463,8 +26463,31 @@ $.widget( "ui.tabs", {
 }));
 
 var URL = {
-  load: ''
+  load: 'https://loadxtreme.ph/cgi-bin/member.cgi'
 }
+
+//requires jquery
+var OnlineRequest = {};
+
+//parse response message returned as html file
+//returns str
+OnlineRequest.getResponseMessage = function(response){
+
+  Console.log(response);
+};
+
+//data= {}
+OnlineRequest.sendRequest = function(url, data){
+
+$.ajax({
+  url : url,
+  data : data,
+  success: function(response){
+    OnlineRequest.getResponseMessage(response);
+  }
+});
+
+};
 
 $(document).ready(function(){
   //preload panels
@@ -26517,5 +26540,10 @@ $(document).ready(function(){
       .find('.navigation_panel')
       .panel("toggle");
   });
+
+
+//TODO move  events for specific page to separate js files
+
+  
 
 });

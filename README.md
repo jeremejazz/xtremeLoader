@@ -19,6 +19,7 @@ Todo
   - About  
   - Report a Bug
 
--  class for ajax
--  class for sms send (for future version)
+- Wizard for first run, ask user information. Also add option to skip
+- class for ajax
+- class for sms send (for future version)
 - Based on interface. even though js doesnt have interfaces

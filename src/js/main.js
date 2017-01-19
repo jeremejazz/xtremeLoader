@@ -50,4 +50,9 @@ $(document).ready(function(){
       .panel("toggle");
   });
 
+
+//TODO move  events for specific page to separate js files
+
+  
+
 });
