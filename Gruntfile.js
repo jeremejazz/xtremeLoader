@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
 
- 
+
   var target = grunt.option('target');
   var extension = "";
   if (target  ==  'minify'){
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 	  grunt.initConfig({
 	    pkg: grunt.file.readJSON('package.json'),
       watch: {
-        files: ['<%= htmlbuild.dist.src %>', 'sections/**/*.html'],
+        files: ['<%= htmlbuild.dist.src %>', 'sections/**/*.html', 'src/**/*.*'],
         tasks: ['concat', 'htmlbuild']
       },
       'http-server': {
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 
 
   	grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.config('uglify', { 
+    grunt.config('uglify', {
 	   options: {
 	    banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
 	  },
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 
 
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.config('cssmin', 
+  grunt.config('cssmin',
   	{
     	dist: {
     		src: "build/<%= pkg.name %>.css",
@@ -49,13 +49,13 @@ module.exports = function(grunt) {
    });
 
 
- grunt.loadNpmTasks('grunt-contrib-concat'); 
+ grunt.loadNpmTasks('grunt-contrib-concat');
  grunt.config('concat' , {
  	options:{
 
  	},
  	js: {
- 		src: ['src/js/jquery.js', 'src/js/jquery.mobile-1.4.5.js' ],
+ 		src: ['src/js/jquery.js', 'src/js/jquery.mobile-1.4.5.js' , 'src/js/constants.js','src/js/main.js'],
  		dest: 'build/<%= pkg.name %>.js'
  	},
  	css: {
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 
  });
 
- 
+
 grunt.loadNpmTasks('grunt-html-build');
 grunt.config('htmlbuild', {
 	dist:{
@@ -94,14 +94,14 @@ grunt.config('htmlbuild', {
     main:{
       files:[
         {
-          expand: true, 
+          expand: true,
           src: [
             'src/css/fonts/**',
             'src/css/images/**',
             'src/css/jquerymobile.nativedroid.*.css',
             'src/css/font-awesome.min.css'
             ],
-          dest: 'build/', 
+          dest: 'build/',
         }
       ]
     }
@@ -117,11 +117,12 @@ var defaultTasks = ['copy'];
   }else{
     defaultTasks = defaultTasks.concat( [ 'concat', 'htmlbuild'] );
   }
-  
-  defaultTasks = defaultTasks.concat(['watch']);
 
-  
+defaultTasks = defaultTasks.concat('watch')
+
+
   grunt.registerTask('default', defaultTasks);
+  //grunt.registerTask('watch',[ 'watch'] );
   grunt.registerTask('serve', ['http-server']);
- 	
+
 };

@@ -1,0 +1,3 @@
+var URL = {
+  load: ''
+}
