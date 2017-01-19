@@ -26468,7 +26468,8 @@ $.widget( "ui.tabs", {
  */
 
 var URL = {
-  load: 'ajax/response_load_error.html'
+  load: 'ajax/response_load_error.html',
+  ajax : 'ajax/ota.txt'
 }
 
 //requires jquery
@@ -26506,10 +26507,15 @@ $(document).ready(function(){
   //load items
   $("#category").change(function(){
                 //fetch products
-
+    var category = $(this).val();
     $.ajax({
-      url: '/ajax/ota.txt',
-      method: 'GET',
+      url: URL.ajax,
+      method: 'POST',
+      data: {
+        state     : "productList",
+        substate  : "categorized",
+        category  : category
+      },
       success: function(response){
         var parsed = $.parseHTML(response);
           $("#list_products").html('');
@@ -26552,8 +26558,7 @@ $(document).ready(function(){
   });
 
 
-//TODO move  events for specific page to separate js files
-
+  //load page events
   $("#btnLoadSubmit").click(function(){
     //get form data
     var form_data = {};
@@ -26561,5 +26566,8 @@ $(document).ready(function(){
       alert(data.message);
     }); //callback alert
   });
+
+
+
 
 });

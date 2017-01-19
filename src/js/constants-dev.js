@@ -4,5 +4,6 @@
  */
 
 var URL = {
-  load: 'ajax/response_load_error.html'
+  load: 'ajax/response_load_error.html',
+  ajax : 'ajax/ota.txt'
 }

@@ -1,4 +1,11 @@
 
+Requirements:
+
+grunt
+npm
+
+
+
 Notes:
 =======
 
