@@ -8,7 +8,7 @@
 		<!-- TODO : script inject -->
 
     <link rel="stylesheet" href="src/css/font-awesome.min.css" />
-<link type="text/css" rel="stylesheet" href="xtremeloader.css" />
+<link type="text/css" rel="stylesheet" href="src/css/xtremeloader.css" />
 
 		<!-- nativeDroid: Light/Dark -->
         <link rel="stylesheet" href="src/css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
@@ -99,8 +99,8 @@
     </div> <!-- page-->
 
 
-	<div data-role="page" data-theme='b' id="page_load" >
-	<div data-role="panel" id="navigation_panel" data-theme="b" data-position="left" data-display="overlay" >
+	<div data-role="page" data-theme='b' id="page_load" class="page" >
+	<div data-role="panel" id="navigation_panel" class="navigation_panel" data-theme="b" data-position="left" data-display="overlay" >
 	<div class="ui-panel-inner">
  		<ul data-role="listview" id="" data-filter="true" data-filter-placeholder="Search Product" data-inset="true"  data-icon="false">
 
@@ -117,7 +117,7 @@
 
         <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
             <h1>Xtreme Loader - Load</h1>
-            <a href="#navigation_panel" data-ajax='false' ><i class='fa fa-bars'></i></a>
+            <a class="toggle_panel" data-ajax='false' ><i class='fa fa-bars'></i></a>
         </div>
 
         <div data-role="content">

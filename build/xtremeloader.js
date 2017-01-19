@@ -26505,4 +26505,17 @@ $(document).ready(function(){
 
   });
 
+/*
+* to make toggle panel available to all pages since
+* this theme doesn't seem to support external panels. We'll just duplicate all panels to the rest of
+* the pages
+*/
+  $(".toggle_panel").click(function(e){
+    e.preventDefault();
+    $(this)
+      .closest('.page')
+      .find('.navigation_panel')
+      .panel("toggle");
+  });
+
 });

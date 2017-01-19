@@ -43,8 +43,8 @@ module.exports = function(grunt) {
   grunt.config('cssmin',
   	{
     	dist: {
-    		src: "build/<%= pkg.name %>.css",
-    		dest: "build/<%= pkg.name %>.min.css"
+    		src: "build/src/<%= pkg.name %>.css",
+    		dest: "build/src/<%= pkg.name %>.min.css"
     	}
    });
 
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
  	},
  	css: {
     src: [  'src/css/jquery.mobile-1.4.5.css', 'src/css/jquerymobile.nativedroid.css' ],
-    dest: 'build/<%= pkg.name %>.css'
+    dest: 'build/src/css/<%= pkg.name %>.css'
  	}
 
  });
@@ -76,7 +76,7 @@ grunt.config('htmlbuild', {
         bundle: ['build/<%= pkg.name %>' + extension +'.js']
       },
       styles: {
-        bundle: ['build/<%= pkg.name %>' + extension + '.css']
+        bundle: ['build/src/css/<%= pkg.name %>' + extension + '.css']
       },
 			sections: {
 				layout: {
