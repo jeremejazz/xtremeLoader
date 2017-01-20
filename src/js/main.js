@@ -8,7 +8,7 @@ $(document).ready(function(){
     var category = $(this).val();
     $.ajax({
       url: URL.ajax,
-      method: 'GET',
+      method: URL.method,
       data: {
         state     : "productlist",
         substate  : "categorized",
@@ -35,12 +35,15 @@ $(document).ready(function(){
         });
 
         $("#list_products").listview("refresh");
+        $( "#product_collapse" ).collapsible( "expand" );
       },
       complete: function(){
         $.mobile.loading('hide');
       },
-      error : function(){
-        alert("An error has occured");
+      error: function(xhr,status, error) {
+
+        console.log("response:" , error)
+        alert("Error " + error)
       }
 
     });
