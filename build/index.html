@@ -3,7 +3,7 @@
     <head>
         <title>nativeDroid - Theme for jQuery Mobile - index</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://*.loadxtreme.ph; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
 		<!-- TODO : script inject -->
 
     <link rel="stylesheet" href="src/css/font-awesome.min.css" />
@@ -32,6 +32,27 @@
     input.pincode{
     -webkit-text-security: disc;
     }
+
+    /*jQuery validation style*/
+    label.error {
+    color: red;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-top: 0.5em;
+    width: 100%;
+    float: none;
+}
+
+@media screen and (orientation: portrait){
+    label.error { margin-left: 0; display: block; }
+}
+
+@media screen and (orientation: landscape){
+    label.error { display: inline-block; margin-left: 22%; }
+}
+
+em { color: red; font-weight: bold; padding-right: .25em; }
 		</style>
 		<!-- jQuery / jQueryMobile Scripts -->
 <script type="text/javascript" src="xtremeloader.js"></script>
@@ -140,15 +161,17 @@
 
       <div data-role="content">
 
-      <form action="">
+      <form action="" id="frmLoad">
         <div class="inset">
             <div data-role="fieldcontain">
               <label for="txtID">ID:</label>
-              <input type="number" name="text-basic" id="txtID" value=""  data-clear-btn="true" placeholder="Account ID No." class="required digits">
+              <input type="number" name="uid" id="txtID" value=""  data-clear-btn="true" placeholder="Account ID No." class="required digits">
+              <span class="errorplacement"></span>
             </div>
             <div data-role="fieldcontain">
               <label for="txtpik">PIK:</label>
-              <input type="number" name="text-basic" id="txtpik" value=""   data-clear-btn="true"  placeholder="PIK Code" class="pincode" class="required">
+              <input type="number" name="pik" id="txtpik" value="" data-clear-btn="true"  placeholder="PIK Code" class="required pincode" >
+              <span class="errorplacement"></span>
             </div>
             <div data-role="fieldcontain">
               <label for="category">Category</label>
@@ -164,7 +187,7 @@
                 <option value="Utilities"> Utilities </option>
                 <option value="myLIFE"> myLIFE </option>
               </select>
-
+            <span class="errorplacement"></span>
             </div>
 
             <div data-role="fieldcontain" >
@@ -178,14 +201,17 @@
               </ul>
 
               </div> <!-- collapsible -->
+                          <span class="errorplacement"></span>
             </div>
             <div data-role="fieldcontain">
               <label for="">Cellnumber: </label>
               <input type="number" name="cellnumber" id="load_cellnumber" data-clear-btn="true" class="required">
+              <span class="errorplacement"></span>
             </div>
             <div data-role="fieldcontain">
               <label for="">Email: </label>
               <input type="email" name="email" id="load_email" data-clear-btn="true" class="required email">
+              <span class="errorplacement"></span>
             </div>
 
             <div data-role="fieldcontain">

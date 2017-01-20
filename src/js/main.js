@@ -77,37 +77,57 @@ $(document).ready(function(){
 
 
   //load page events
+  $("#frmLoad").validate({
+    errorPlacement : function(error, element){
+      error.appendTo( element.closest('.ui-field-contain').find('span.errorplacement') );
+    }
+  });
+
   $("#btnLoadSubmit").click(function(e){
     e.preventDefault();
 
         //TODO validation for blank entries, email format (better in realtime for formats), cellnumber formats (no spaces between)
 
-    if(confirm("Are you sure you want to Load \"" + $("#product_name a").text() + "\" (" + $("#product").val() + ") to " +  $("#load_cellnumber").val()) == false){
-      return false;
-    }
 
-    //get form data
-    var form_data = {};
-    form_data['state'] = "webload3";
-    form_data['step'] = 1;
-    form_data['webtype'] = null;
-    form_data['pc_detail'] = "a";
-    form_data['uid'] = $("#txtID").val(); //TODO might reconsider classes w/ dynamic traversing for other pages
-    form_data['pik'] = $("#txtpik").val();
-    form_data['category'] = $("#category").val();
-    form_data['pcode'] = $("#product").val();
-    form_data['cellno'] = $("#load_cellnumber").val();
-    form_data['email'] = $("#load_email").val();
-    form_data['pc_detail'] = "b"; // no seriously I'm just following those hidden fields
-    form_data['submit'] = "SEND LOAD";
-    OnlineRequest.sendRequest(URL.load, form_data, function (data){
-      var dot = data.message.indexOf("."); //truncate additional text after 1st sentence
+    if($("#frmLoad").valid()){
+      //validation for hidden field
+      if ($("#product").val() == ""){
+        alert("Please select a product");
+        $( "#product_collapse" ).collapsible( "expand" );
 
-      alert(data.message.substring(0, dot));
-      //at this moment I don't know all the response messages. So this should do
-      //todo add reset()
+        $('html, body').animate({
+            scrollTop: $("#category").offset().top
+        }, 600);
 
-    }); //callback alert
+        //$("#product").closest(".ui-field-contain").find('span.errorplacement').html('<label id="product-error" class="error" for="product">Please select a product</label>')
+        return false;
+      }
+      if(confirm("Are you sure you want to Load \"" + $("#product_name a").text() + "\" (" + $("#product").val() + ") to " +  $("#load_cellnumber").val()) == false){
+        return false;
+      }
+            //get form data
+            var form_data = {};
+            form_data['state'] = "webload3";
+            form_data['step'] = 1;
+            form_data['webtype'] = null;
+            form_data['pc_detail'] = "a";
+            form_data['uid'] = $("#txtID").val(); //TODO might reconsider classes w/ dynamic traversing for other pages
+            form_data['pik'] = $("#txtpik").val();
+            form_data['category'] = $("#category").val();
+            form_data['pcode'] = $("#product").val();
+            form_data['cellno'] = $("#load_cellnumber").val();
+            form_data['email'] = $("#load_email").val();
+            form_data['pc_detail'] = "b"; // no seriously I'm just following those hidden fields
+            form_data['submit'] = "SEND LOAD";
+            OnlineRequest.sendRequest(URL.load, form_data, function (data){
+              var dot = data.message.indexOf("."); //truncate additional text after 1st sentence
+
+              alert(data.message.substring(0, dot));
+              //at this moment I don't know all the response messages. So this should do
+              //todo add reset()
+
+            }); //callback alert
+      }
   });
 
 

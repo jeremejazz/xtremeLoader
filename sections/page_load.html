@@ -10,15 +10,17 @@
 
       <div data-role="content">
 
-      <form action="">
+      <form action="" id="frmLoad">
         <div class="inset">
             <div data-role="fieldcontain">
               <label for="txtID">ID:</label>
-              <input type="number" name="text-basic" id="txtID" value=""  data-clear-btn="true" placeholder="Account ID No." class="required digits">
+              <input type="number" name="uid" id="txtID" value=""  data-clear-btn="true" placeholder="Account ID No." class="required digits">
+              <span class="errorplacement"></span>
             </div>
             <div data-role="fieldcontain">
               <label for="txtpik">PIK:</label>
-              <input type="number" name="text-basic" id="txtpik" value=""   data-clear-btn="true"  placeholder="PIK Code" class="pincode" class="required">
+              <input type="number" name="pik" id="txtpik" value="" data-clear-btn="true"  placeholder="PIK Code" class="required pincode" >
+              <span class="errorplacement"></span>
             </div>
             <div data-role="fieldcontain">
               <label for="category">Category</label>
@@ -34,7 +36,7 @@
                 <option value="Utilities"> Utilities </option>
                 <option value="myLIFE"> myLIFE </option>
               </select>
-
+            <span class="errorplacement"></span>
             </div>
 
             <div data-role="fieldcontain" >
@@ -48,14 +50,17 @@
               </ul>
 
               </div> <!-- collapsible -->
+                          <span class="errorplacement"></span>
             </div>
             <div data-role="fieldcontain">
               <label for="">Cellnumber: </label>
               <input type="number" name="cellnumber" id="load_cellnumber" data-clear-btn="true" class="required">
+              <span class="errorplacement"></span>
             </div>
             <div data-role="fieldcontain">
               <label for="">Email: </label>
               <input type="email" name="email" id="load_email" data-clear-btn="true" class="required email">
+              <span class="errorplacement"></span>
             </div>
 
             <div data-role="fieldcontain">

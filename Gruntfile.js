@@ -8,6 +8,15 @@ module.exports = function(grunt) {
     extension = ".min.";
   }
 
+  var js_files =  [
+        'src/js/jquery.js',
+        'src/js/jquery.mobile-1.4.5.js' ,
+        'src/js/jquery.validate.min.js' ,
+        'src/js/constants-dev.js', // TODO add parameter for production and dev environments
+        'src/js/OnlineRequest.js',
+        'src/js/main.js'
+      ];
+
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-http-server');
 	  grunt.initConfig({
@@ -32,7 +41,7 @@ module.exports = function(grunt) {
 	    banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
 	  },
      dist: {
-        src: ['src/js/jquery.js', 'src/js/jquery.mobile-1.4.5.js' ],
+        src: js_files,
         dest: 'build/<%= pkg.name %>.min.js'
       }
     }
@@ -55,13 +64,7 @@ module.exports = function(grunt) {
 
  	},
  	js: {
- 		src: [
-          'src/js/jquery.js',
-          'src/js/jquery.mobile-1.4.5.js' ,
-          'src/js/constants-dev.js', // TODO add parameter for production and dev environments
-          'src/js/OnlineRequest.js',
-          'src/js/main.js'
-        ],
+ 		src: js_files,
  		dest: 'build/<%= pkg.name %>.js'
  	},
  	css: {
