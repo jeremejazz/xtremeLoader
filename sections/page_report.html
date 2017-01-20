@@ -1,0 +1,46 @@
+<div data-role="page" data-theme='b' id="page_report" class="page" >
+
+  <!-- build:section layout.navbar -->
+  <!-- /build -->
+
+      <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+          <h1>Report a Bug</h1>
+          <a class="toggle_panel" data-ajax='false' ><i class='fa fa-bars'></i></a>
+      </div>
+
+      <div data-role="content">
+
+      <form  id="frmReport">
+        <div class="inset">
+            <div data-role="fieldcontain">
+              <label for="txtID">Name:</label>
+              <input type="text" name="name" id="" value=""  data-clear-btn="true" placeholder="Your Name" class="required input">
+              <span class="errorplacement"></span>
+            </div>
+            <div data-role="fieldcontain">
+              <label for="txtpik">Email:</label>
+              <input type="email" name="email" id="" value="" data-clear-btn="true"  placeholder="Your Email" class="required email input" >
+              <span class="errorplacement"></span>
+            </div>
+
+            <div data-role="fieldcontain">
+              <label for="">Message: </label>
+              <textarea name="name" rows="8" cols="80" placeholder="Your Message Here" class="required"></textarea>
+              <span class="errorplacement"></span>
+            </div>
+
+
+            <div data-role="fieldcontain">
+              <button  type="submit" id="">Submit</button>
+              <button  type="button" id="">Cancel</button>
+            </div>
+
+        </div><!-- .inset -->
+      </form>
+
+    </div>
+
+
+      </div>
+
+  </div> <!-- page-->

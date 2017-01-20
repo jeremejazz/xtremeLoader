@@ -93,7 +93,8 @@ grunt.config('htmlbuild', {
 					navbar: 'sections/navbar.html'
 				},
         page:{
-          load: 'sections/page_load.html'
+          load: 'sections/page_load.html',
+          report: 'sections/page_report.html'
         }
 			}
 		}
