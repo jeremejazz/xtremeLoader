@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 
-
+ var env = ""; //browser, mobile, webtype
+ var mode = ""; //development or production
 
   var target = grunt.option('target');
   var extension = "";
