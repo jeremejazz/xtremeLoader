@@ -1,14 +1,20 @@
+# XtremeLoader
 
-Requirements:
+Application for LoadXtreme quick access to online transactions such as online loading, transfer, etc.
 
-grunt
-npm
+#### Requirements:
+
+- npm
+- grunt
 
 
 
-Notes:
-=======
+#### Screenshots
+![alt text](screenshots/Screenshot_2017-01-22-14-33-36.png "Load Page")
 
+
+## Notes:
+(just some personal notes/reminds.  forget about this part. will be using trello later)
 
 
 Navigation
@@ -18,6 +24,7 @@ Navigation
 
 
 Todo
+- UX change. Split pages into 2 parts to avoid scrolling down. Use next button instead, *like a wizard Harry!*.
 - "Your request has been queued. Click here to track request" // remove click here. Truncate after dot
 - list should clear on selection of new category
 - validation for blank entries, email format (better in realtime for formats),
