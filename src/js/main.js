@@ -106,6 +106,7 @@ $(document).ready(function(){
         return false;
       }
             //get form data
+            /*
             var form_data = {};
             form_data['state'] = "webload3";
             form_data['step'] = 1;
@@ -119,6 +120,8 @@ $(document).ready(function(){
             form_data['email'] = $("#load_email").val();
             form_data['pc_detail'] = "b"; // no seriously I'm just following those hidden fields
             form_data['submit'] = "SEND LOAD";
+            */
+            var form_data = $("#frmLoad").serialize();
             OnlineRequest.sendRequest(URL.load, form_data, function (data){
               var dot = data.message.indexOf("."); //truncate additional text after 1st sentence
 

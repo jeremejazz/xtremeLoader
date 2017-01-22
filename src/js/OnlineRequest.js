@@ -19,6 +19,7 @@ OnlineRequest.sendRequest = function(url, data, callback){
 $.ajax({
   url : url,
   data : data,
+  method: URL.method,
   beforeSend: function(){
 
       $.mobile.loading( "show", {

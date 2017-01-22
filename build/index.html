@@ -162,6 +162,11 @@ em { color: red; font-weight: bold; padding-right: .25em; }
       <div data-role="content">
 
       <form action="" id="frmLoad">
+
+        <input type="hidden" name="state" value="webload3">
+        <input type="hidden" name="step" value="1">
+        <input type="hidden" name="webtype" value="">
+        <input type="hidden" name="pc_detail" value="a">
         <div class="inset">
             <div data-role="fieldcontain">
               <label for="txtID">ID:</label>
@@ -194,7 +199,7 @@ em { color: red; font-weight: bold; padding-right: .25em; }
               <label for=""></label>
               <div data-role="collapsible" data-theme="b" data-content-theme="b" class="ui-state-disabled" id="product_collapse">
               <h2 id="product_name">Product</h2>
-              <input type="hidden" id="product" name="product" class="required">
+              <input type="hidden" id="product" name="pcode" class="required">
 
               <ul data-role="listview" id="list_products" data-filter="true" data-filter-placeholder="Search Product" data-inset="true">
 
@@ -205,7 +210,7 @@ em { color: red; font-weight: bold; padding-right: .25em; }
             </div>
             <div data-role="fieldcontain">
               <label for="">Cellnumber: </label>
-              <input type="number" name="cellnumber" id="load_cellnumber" data-clear-btn="true" class="required">
+              <input type="number" name="cellno" id="load_cellnumber" data-clear-btn="true" class="required">
               <span class="errorplacement"></span>
             </div>
             <div data-role="fieldcontain">
@@ -223,9 +228,14 @@ em { color: red; font-weight: bold; padding-right: .25em; }
                   <p>By checking this, your <strong>Account ID, Cellnumber, </strong> and <strong>Email</strong> will be saved for next use. </p>
                 </div>
             </div>
+            <!-- Hidden fields -->
+
+
+            <input type="hidden" name="pc_detail" value="b">
+            <input type="hidden" name="submit" value="SEND LOAD">
 
             <div data-role="fieldcontain">
-              <button  type="button" id="btnLoadSubmit">Submit</button>
+              <button  type="button" id="btnLoadSubmit" >Submit</button>
               <button  type="button" id="btnLoadClear">Clear</button>
               <button  type="button" id="btnLoadCancel">Cancel</button>
             </div>

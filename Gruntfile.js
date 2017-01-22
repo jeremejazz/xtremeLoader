@@ -1,7 +1,18 @@
 module.exports = function(grunt) {
 
- var env = ""; //browser, mobile, webtype
- var mode = ""; //development or production
+var modes = {
+  'development' : 1, //concat
+  'production' : 0 //uses minify,  dont copy ajax folder
+};
+
+var environments = {
+  browser : 1,
+  mobile  : 2,
+  web     : 3
+};
+
+ var env  = environments.browser; //browser, mobile, webtype
+ var mode = modes.development; //development or production
 
   var target = grunt.option('target');
   var extension = "";
@@ -13,7 +24,7 @@ module.exports = function(grunt) {
         'src/js/jquery.js',
         'src/js/jquery.mobile-1.4.5.js' ,
         'src/js/jquery.validate.min.js' ,
-        'src/js/constants-dev.js', // TODO add parameter for production and dev environments
+         mode == modes.development ? 'src/js/constants-dev.js' : 'src/js/constants.js',
         'src/js/OnlineRequest.js',
         'src/js/main.js'
       ];
