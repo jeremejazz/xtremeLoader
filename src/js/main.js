@@ -89,8 +89,10 @@ $(document).ready(function(){
   $(".nextpage").click(function(e){
       e.preventDefault();
       var href = $(this).attr('data-href');
-      console.log(href);
-      $.mobile.navigate(href); //pass form data?
+
+      $.mobile.navigate(href,{
+        transition: "slide"
+      }); //pass form data?
 
 
   });

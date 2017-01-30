@@ -2,7 +2,7 @@ TODO:
 Priority:
 split load to multiple pages to avoid scrolling in one page
   -this technique might help http://stackoverflow.com/a/12394604/1109352
-
+remove reset. only reset when cancelled or when click new page
 Reset forms on page load
 UI for other pages
  - Transfer (priority)
