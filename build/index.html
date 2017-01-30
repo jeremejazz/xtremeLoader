@@ -68,9 +68,9 @@ em { color: red; font-weight: bold; padding-right: .25em; }
 	<div class="ui-panel-inner">
  		<ul data-role="listview" id="" data-filter="true" data-filter-placeholder="Search Product" data-inset="true"  data-icon="false">
 
-						    <li><a href="#home" >Home</a></li>
-						    <li><a href="#">Settings</a></li>
-						    <li><a href="#">About</a></li>
+
+						    <li><a href="#page_settings">Settings</a></li>
+						    <li><a href="#page_about">About</a></li>
 						    <li><a href="#page_report">Report a Bug</a></li>
 
 	 	</ul>
@@ -213,9 +213,9 @@ em { color: red; font-weight: bold; padding-right: .25em; }
 	<div class="ui-panel-inner">
  		<ul data-role="listview" id="" data-filter="true" data-filter-placeholder="Search Product" data-inset="true"  data-icon="false">
 
-						    <li><a href="#home" >Home</a></li>
-						    <li><a href="#">Settings</a></li>
-						    <li><a href="#">About</a></li>
+
+						    <li><a href="#page_settings">Settings</a></li>
+						    <li><a href="#page_about">About</a></li>
 						    <li><a href="#page_report">Report a Bug</a></li>
 
 	 	</ul>
@@ -282,6 +282,39 @@ em { color: red; font-weight: bold; padding-right: .25em; }
       </div>
     <!-- page-->
 
+<div data-role="page" data-theme='b' id="page_about" class="page" >
+
+      <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+          <h1>About</h1>
+          <a class="back" data-ajax="false" onclick="window.history.back();" href="#" data-direction="reverse" data-transition="pop"><i class='fa fa-arrow-left'></i></a>
+      </div>
+
+      <div data-role="content">
+        This is an open source project.
+
+      </div>
+
+      </div><!-- page-->
+
+<div data-role="page" data-theme='b' id="page_settings" class="page" >
+
+      <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+          <h1>Settings</h1>
+          <a class="back" data-ajax="false" onclick="window.history.back();" href="#" data-direction="reverse" data-transition="pop"><i class='fa fa-arrow-left'></i></a>
+      </div>
+
+      <div data-role="content">
+        <div data-role="fieldcontain">
+            <label for="theme">Theme</label>
+            <select id="theme" class="" name="">
+              <option value="">Light</option>
+              <option value="">Dark</option>
+            </select>
+        </div>
+
+      </div>
+
+      </div><!-- page-->
 
 <div data-role="page" data-theme='b' id="page_report" class="page" >
 
@@ -289,9 +322,9 @@ em { color: red; font-weight: bold; padding-right: .25em; }
 	<div class="ui-panel-inner">
  		<ul data-role="listview" id="" data-filter="true" data-filter-placeholder="Search Product" data-inset="true"  data-icon="false">
 
-						    <li><a href="#home" >Home</a></li>
-						    <li><a href="#">Settings</a></li>
-						    <li><a href="#">About</a></li>
+
+						    <li><a href="#page_settings">Settings</a></li>
+						    <li><a href="#page_about">About</a></li>
 						    <li><a href="#page_report">Report a Bug</a></li>
 
 	 	</ul>
