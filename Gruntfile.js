@@ -105,6 +105,7 @@ grunt.config('htmlbuild', {
 				},
         page:{
           load: 'sections/page_load.html',
+          load2: 'sections/page_load2.html',
           report: 'sections/page_report.html'
         }
 			}

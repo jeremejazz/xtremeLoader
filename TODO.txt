@@ -1,6 +1,9 @@
-TODO: 
-Priority: 
-Reset forms on page load 
+TODO:
+Priority:
+split load to multiple pages to avoid scrolling in one page
+  -this technique might help http://stackoverflow.com/a/12394604/1109352
+
+Reset forms on page load
 UI for other pages
  - Transfer (priority)
  - Piso Load
@@ -9,11 +12,11 @@ UI for other pages
    Evoucher
 
 
-Cache the products 
+Cache the products
  -array? or cookie?
 
 
-Settings page 
+Settings page
   	Themes
 	Privacy
 
@@ -21,8 +24,4 @@ Project:
 Grunt task for injecting navigation partial to every page
 	build html
 Grunt watch task for all dev automations
-remove unnecessary files (test.js, sample etc) 
-
-
-
-
+remove unnecessary files (test.js, sample etc)

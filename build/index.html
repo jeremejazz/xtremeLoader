@@ -168,16 +168,7 @@ em { color: red; font-weight: bold; padding-right: .25em; }
         <input type="hidden" name="webtype" value="">
         <input type="hidden" name="pc_detail" value="a">
         <div class="inset">
-            <div data-role="fieldcontain">
-              <label for="txtID">ID:</label>
-              <input type="number" name="uid" id="txtID" value=""  data-clear-btn="true" placeholder="Account ID No." class="required digits">
-              <span class="errorplacement"></span>
-            </div>
-            <div data-role="fieldcontain">
-              <label for="txtpik">PIK:</label>
-              <input type="number" name="pik" id="txtpik" value="" data-clear-btn="true"  placeholder="PIK Code" class="required pincode" >
-              <span class="errorplacement"></span>
-            </div>
+
             <div data-role="fieldcontain">
               <label for="category">Category</label>
               <select name="category" id="category" data-native-menu="true" class="required">
@@ -208,11 +199,75 @@ em { color: red; font-weight: bold; padding-right: .25em; }
               </div> <!-- collapsible -->
                           <span class="errorplacement"></span>
             </div>
+
             <div data-role="fieldcontain">
               <label for="">Cellnumber: </label>
               <input type="number" name="cellno" id="load_cellnumber" data-clear-btn="true" class="required">
               <span class="errorplacement"></span>
             </div>
+            <!-- Hidden fields -->
+
+
+            <input type="hidden" name="pc_detail" value="b">
+            <input type="hidden" name="submit" value="SEND LOAD">
+
+            <div data-role="fieldcontain">
+              <button class="nextpage" type="button" id="" data-href="#page_load2">Next</button>
+            </div>
+
+        </div><!-- .inset -->
+      </form>
+
+    </div>
+
+
+      </div>
+
+  </div> <!-- page-->
+
+<div data-role="page" data-theme='b' id="page_load2" class="page" >
+
+	<div data-role="panel" id="navigation_panel" class="navigation_panel" data-theme="b" data-position="left" data-display="overlay" >
+	<div class="ui-panel-inner">
+ 		<ul data-role="listview" id="" data-filter="true" data-filter-placeholder="Search Product" data-inset="true"  data-icon="false">
+
+						    <li><a href="#home" >Home</a></li>
+						    <li><a href="#">Settings</a></li>
+						    <li><a href="#">About</a></li>
+						    <li><a href="#page_report">Report a Bug</a></li>
+
+	 	</ul>
+
+	</div>
+
+	</div><!-- /panel -->
+
+
+      <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+          <h1>Xtreme Loader - Account information</h1>
+          <a class="toggle_panel" data-ajax='false' ><i class='fa fa-bars'></i></a>
+      </div>
+
+      <div data-role="content">
+
+      <form action="" id="frmLoad">
+
+        <input type="hidden" name="state" value="webload3">
+        <input type="hidden" name="step" value="1">
+        <input type="hidden" name="webtype" value="">
+        <input type="hidden" name="pc_detail" value="a">
+        <div class="inset">
+            <div data-role="fieldcontain">
+              <label for="txtID">ID:</label>
+              <input type="number" name="uid" id="txtID" value=""  data-clear-btn="true" placeholder="Account ID No." class="required digits">
+              <span class="errorplacement"></span>
+            </div>
+            <div data-role="fieldcontain">
+              <label for="txtpik">PIK:</label>
+              <input type="number" name="pik" id="txtpik" value="" data-clear-btn="true"  placeholder="PIK Code" class="required pincode" >
+              <span class="errorplacement"></span>
+            </div>
+
             <div data-role="fieldcontain">
               <label for="">Email: </label>
               <input type="email" name="email" id="load_email" data-clear-btn="true" class="required email">

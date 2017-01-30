@@ -2,7 +2,10 @@ $(document).ready(function(){
   //preload panels
   $( "body>[data-role='panel']" ).panel();
 
+
   //load items
+  var height = $.mobile.getScreenHeight();
+
   $("#category").change(function(){
                 //fetch products
     var category = $(this).val();
@@ -28,11 +31,11 @@ $(document).ready(function(){
 
         var parsed = $.parseHTML(response);
           $("#list_products").html('');
-        $.each(parsed[1], function(i, item){
-          if(i ==0)
-            return; //don't include [select product]
-          $("#list_products").append('<li><a href="" data-val="' + $(item).val() + '">' + $(item).text() + '</a></li>');
-        });
+            $.each(parsed[1], function(i, item){
+              if(i ==0)
+                return; //don't include [select product]
+              $("#list_products").append('<li><a href="" data-val="' + $(item).val() + '">' + $(item).text() + '</a></li>');
+            });
 
         $("#list_products").listview("refresh");
         $( "#product_collapse" ).collapsible( "expand" );
@@ -83,6 +86,14 @@ $(document).ready(function(){
     }
   });
 
+  $(".nextpage").click(function(e){
+      e.preventDefault();
+      var href = $(this).attr('data-href');
+      console.log(href);
+      $.mobile.navigate(href); //pass form data?
+
+
+  });
   $("#btnLoadSubmit").click(function(e){
     e.preventDefault();
 

@@ -17,16 +17,7 @@
         <input type="hidden" name="webtype" value="">
         <input type="hidden" name="pc_detail" value="a">
         <div class="inset">
-            <div data-role="fieldcontain">
-              <label for="txtID">ID:</label>
-              <input type="number" name="uid" id="txtID" value=""  data-clear-btn="true" placeholder="Account ID No." class="required digits">
-              <span class="errorplacement"></span>
-            </div>
-            <div data-role="fieldcontain">
-              <label for="txtpik">PIK:</label>
-              <input type="number" name="pik" id="txtpik" value="" data-clear-btn="true"  placeholder="PIK Code" class="required pincode" >
-              <span class="errorplacement"></span>
-            </div>
+
             <div data-role="fieldcontain">
               <label for="category">Category</label>
               <select name="category" id="category" data-native-menu="true" class="required">
@@ -57,25 +48,11 @@
               </div> <!-- collapsible -->
                           <span class="errorplacement"></span>
             </div>
+
             <div data-role="fieldcontain">
               <label for="">Cellnumber: </label>
               <input type="number" name="cellno" id="load_cellnumber" data-clear-btn="true" class="required">
               <span class="errorplacement"></span>
-            </div>
-            <div data-role="fieldcontain">
-              <label for="">Email: </label>
-              <input type="email" name="email" id="load_email" data-clear-btn="true" class="required email">
-              <span class="errorplacement"></span>
-            </div>
-
-            <div data-role="fieldcontain">
-
-              <input type="checkbox" id="chksave" checked>
-                <label for="chksave">Save my basic information</label>
-                <p style="text-align:right;">What's this? <a href="#popupInfo" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn  ui-nodisc-icon ui-btn-inline ui-icon-info ui-btn-icon-notext" title="Learn more">Learn more</a></p>
-                <div data-role="popup" id="popupInfo" class="ui-content" data-theme="a" style="max-width:350px;">
-                  <p>By checking this, your <strong>Account ID, Cellnumber, </strong> and <strong>Email</strong> will be saved for next use. </p>
-                </div>
             </div>
             <!-- Hidden fields -->
 
@@ -84,9 +61,7 @@
             <input type="hidden" name="submit" value="SEND LOAD">
 
             <div data-role="fieldcontain">
-              <button  type="button" id="btnLoadSubmit" >Submit</button>
-              <button  type="button" id="btnLoadClear">Clear</button>
-              <button  type="button" id="btnLoadCancel">Cancel</button>
+              <button class="nextpage" type="button" id="" data-href="#page_load2">Next</button>
             </div>
 
         </div><!-- .inset -->
