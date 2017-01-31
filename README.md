@@ -10,7 +10,7 @@ Application for LoadXtreme quick access to online transactions such as online lo
 
 
 #### Screenshots
-![alt text](screenshots/Screenshot_2017-01-22-14-33-36.png "Load Page")
+![alt text](screenshots/load.png")
 
 
 ## Notes:
