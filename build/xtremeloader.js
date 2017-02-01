@@ -26612,12 +26612,15 @@ $(document).ready(function(){
 
   $(".nextpage").click(function(e){
       e.preventDefault();
-      var href = $(this).attr('data-href');
+      //get parent form
+      $form = $(this).closest('form');
+      if($form.valid()){
+        var href = $(this).attr('data-href');
 
-      $.mobile.navigate(href,{
-        transition: "slide"
-      }); //pass form data?
-
+        $.mobile.navigate(href,{
+          transition: "slide"
+        }); //pass form data?
+      }
 
   });
   $("#btnLoadSubmit").click(function(e){
