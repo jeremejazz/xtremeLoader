@@ -26536,6 +26536,7 @@ $(document).ready(function(){
     $.ajax({
       url: URL.ajax,
       method: URL.method,
+      crossDomain: true,
       data: {
         state     : "productlist",
         substate  : "categorized",
@@ -26615,6 +26616,22 @@ $(document).ready(function(){
       //get parent form
       $form = $(this).closest('form');
       if($form.valid()){
+        //also check for hidden fields with required filed (i.e the products list)
+        var requiredHiddenFields = "";
+        $form.find("input.required:hidden").each(function(i, item){
+
+          if($(item).val() == ""){
+            requiredHiddenFields += $(item).attr("data-fieldname") + "\n";
+          }
+          
+          
+        });
+
+        if(requiredHiddenFields.length > 0){
+            alert("Please indicate: \n" + requiredHiddenFields );
+          return false;
+        }
+
         var href = $(this).attr('data-href');
 
         $.mobile.navigate(href,{

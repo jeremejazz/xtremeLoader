@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
 
 var modes = {
-  'development' : 1, //concat
-  'production' : 0 //uses minify,  dont copy ajax folder
+  'development' : 0, //concat
+  'production' : 1 //uses minify,  dont copy ajax folder
 };
 
 var environments = {
@@ -10,7 +10,7 @@ var environments = {
   mobile  : 2,
   web     : 3
 };
-
+ 
  var env  = environments.browser; //browser, mobile, webtype
  var mode = modes.development; //development or production
 
