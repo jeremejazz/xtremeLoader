@@ -90,7 +90,7 @@ var environments = {
 grunt.loadNpmTasks('grunt-html-build');
 grunt.config('htmlbuild', {
 	dist:{
-		src: 'index.html',
+		src: 'sections/index.html',
 		dest: 'build',
 		options:{
       scripts:{
