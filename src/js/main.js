@@ -116,25 +116,18 @@ $(document).ready(function(){
       }
 
   });
+
+
   $("#btnLoadSubmit").click(function(e){
     e.preventDefault();
 
         //TODO validation for blank entries, email format (better in realtime for formats), cellnumber formats (no spaces between)
 
 
-    if($("#frmLoad").valid()){
+    if($("#frmLoad2").valid()){
       //validation for hidden field
-      if ($("#product").val() == ""){
-        alert("Please select a product");
-        $( "#product_collapse" ).collapsible( "expand" );
 
-        $('html, body').animate({
-            scrollTop: $("#category").offset().top
-        }, 600);
 
-        //$("#product").closest(".ui-field-contain").find('span.errorplacement').html('<label id="product-error" class="error" for="product">Please select a product</label>')
-        return false;
-      }
       if(confirm("Are you sure you want to Load \"" + $("#product_name a").text() + "\" (" + $("#product").val() + ") to " +  $("#load_cellnumber").val()) == false){
         return false;
       }
